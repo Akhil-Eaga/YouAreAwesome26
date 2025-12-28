@@ -13,11 +13,12 @@ struct ContentView: View {
             Image(systemName: "swift")
                 .resizable()
                 .scaledToFit()
-                .foregroundStyle(.orange.gradient)
+                .frame(width: 250)
+                .foregroundStyle(.green.gradient)
                 .padding()
             Text("I am a developer!")
                 .font(.largeTitle)
-                .fontWeight(.heavy)
+                .fontWeight(.medium)
         }
         .padding()
     }
