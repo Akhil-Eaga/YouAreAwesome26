@@ -8,40 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var message = "I am a programmer !"
+    @State var message = "I Am a Programmer!"
+    
     var body: some View {
         VStack {
+            Spacer()
             Image(systemName: "swift")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 250)
-                .foregroundStyle(.green.gradient)
+                .foregroundStyle(.orange.gradient)
                 .padding()
             Text(message)
                 .font(.largeTitle)
-                .fontWeight(.medium)
-            if #available(iOS 26.0, *) {
-                Button {
+                .fontWeight(.ultraLight)
+            Spacer()
+            HStack {
+                Button("Awesome!") {
                     message = "Awesome !"
-                } label: {
-                    Text("Click Me")
-                        .padding(.vertical, 10)
-                        .padding(.horizontal, 20)
                 }
-                .buttonStyle(.glassProminent)
-            } else {
-                // Fallback on older versions
-                Button {
-                    message = "Awesome !"
-                } label: {
-                    Text("Click Me")
-                        .padding(.vertical, 10)
-                        .padding(.horizontal, 20)
+                Button("Great!") {
+                    message = "Great!"
                 }
-                .buttonStyle(.borderedProminent)
             }
-            
-
+            .buttonStyle(.borderedProminent)
+            .font(.title2)
+            .tint(.orange)
         }
         .padding()
     }
